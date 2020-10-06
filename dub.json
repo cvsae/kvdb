@@ -1,0 +1,11 @@
+{
+	"name": "kvdb",
+	"targetType": "library",
+	"authors": [
+		"cvsae"
+	],
+	"dependencies": {},
+	"description": "kvdb lightweight and simple key-value store ",
+	"copyright": "Copyright © 2020, cvsae",
+	"license": "MIT"
+}
