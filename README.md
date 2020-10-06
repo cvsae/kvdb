@@ -10,7 +10,7 @@
 
 
 import std.stdio;
-import dddb;
+import kvdb;
 
 void main()
 {
