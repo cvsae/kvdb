@@ -1,4 +1,4 @@
-// Copyright (c) 2018 CVSC
+// Copyright (c) 2018-2020 CVSC
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +16,24 @@ class kvdb
 {
 	JSONValue j;
 	string dbdata;
-	string db;	
+	string db;
+    
+    // memory store false by default
+	bool nMemory = false;
+	
+
+	this(bool inMemory)
+	{
+		assert(inMemory == false, "Operation not preminted \n      
+		##################### USE #####################n
+		kvdb db = new kvdb(test.db)) -> For file store,
+		kvdb db = new kvdb(true)) -> For in memory store
+		");
+		nMemory = true;
+		// db not exists, init null db
+	    j = parseJSON("{}");
+	}
+
 
 	this(string dbfile){
 		db = dbfile;
@@ -55,7 +72,9 @@ class kvdb
 		if(!havekey(key))
 		{
 			j.object[key] = value;
-        	save();
+
+			if (!nMemory)
+				save();
         	return true;
 		}
 
@@ -68,7 +87,8 @@ class kvdb
 		if(havekey(key))
 		{
 			j.object[key] = value;
-        	save();
+        	if (!nMemory)
+				save();
         	return true;
 		}
 
