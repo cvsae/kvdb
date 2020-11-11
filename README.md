@@ -68,4 +68,4 @@ v0.0.2 (2017-11-11)
 v0.0.1 (2020-10-6)
 ===================
 
-- First official release – consider spddb stable now.
+- First official release – consider kvdb stable now.
