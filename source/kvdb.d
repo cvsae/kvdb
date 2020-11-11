@@ -27,7 +27,7 @@ class kvdb
 		assert(inMemory == false, "Operation not preminted \n      
 		##################### USE #####################n
 		kvdb db = new kvdb(test.db)) -> For file store,
-		kvdb db = new kvdb(true)) -> For in memory store
+		kvdb db = new kvdb(false)) -> For in memory store
 		");
 		nMemory = true;
 		// db not exists, init null db
