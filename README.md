@@ -14,11 +14,15 @@ import kvdb;
 
 void main()
 {  
-    // use false for in memory data sore 
-    kvdb db = new kvdb(false);
+    // use false instead of file path for in memory data sore 
+    // kvdb db = new kvdb(false);
     
     // use file path for disk data store 
     kvdb db = new kvdb("test.db");
+    
+    // auto commit in enabled by default to disable auto commit use 
+    // db.nAutoCommit = false;
+    // note: if you set nAutoCommit to false you have to run db.commit() after set and update operation
     
 
     // assign to hello key the value world 
