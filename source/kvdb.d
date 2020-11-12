@@ -21,6 +21,8 @@ class kvdb
     // memory store false by default
 	bool nMemory = false;
 	
+	// auto commit enabled by default 
+	bool nAutoCommit = true;
 
 	this(bool inMemory)
 	{
@@ -56,7 +58,7 @@ class kvdb
 
 
 
-	void save()
+	void commit()
 	{
 		// save 
 		File file = File(db, "w+");
@@ -73,8 +75,8 @@ class kvdb
 		{
 			j.object[key] = value;
 
-			if (!nMemory)
-				save();
+			if (!nMemory && nAutoCommit)
+				commit();
         	return true;
 		}
 
@@ -87,8 +89,8 @@ class kvdb
 		if(havekey(key))
 		{
 			j.object[key] = value;
-        	if (!nMemory)
-				save();
+        	if (!nMemory && nAutoCommit)
+				commit();
         	return true;
 		}
 
