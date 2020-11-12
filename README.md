@@ -1,7 +1,7 @@
 # kvdb
 [![Build Status](https://travis-ci.org/cvsae/kvdb.svg?branch=master)](https://travis-ci.org/cvsae/kvdb)
 
- kvdb is lightweight and simple key-value dlang database (store) build on top of std.json 
+ kvdb is lightweight and simple key-value dlang database (store) build on top of std.json
 
 ## Usage
 
@@ -57,15 +57,18 @@ void main()
 }
 
 
-v0.0.2 (2017-11-11)
+v0.0.3 (13-11-2029)
 ===================
+- Added auto commit option -> Disable && Enable auto commit 
 
+
+
+v0.0.2 (11-11-2020)
+===================
 - Added store method -> In memory data store option
 
 
 
-    
-v0.0.1 (2020-10-6)
+v0.0.1 (6-10-2020)
 ===================
-
 - First official release – consider kvdb stable now.
